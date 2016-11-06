@@ -14,11 +14,10 @@ public class NotificationController {
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
     public User greetings(User user) throws InterruptedException {
-        Thread.sleep(100);
+        Thread.sleep(1000);
 
         System.out.println(user);
 
         return user;
     }
-
 }

@@ -1,0 +1,32 @@
+<div ng-controller="commentCtrl">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <h1>Hello, leave your comment here!</h1>
+        </div>
+    </div>
+    <form name="commentForm" ng-submit="saveComment(newComment)">
+        <div class="row">
+            <div class="form-group col-md-offset-3 col-md-4">
+                <textarea ng-model="newComment.comment" class="form-control" rows="5" id="comment"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-6">
+                <button type="submit"
+                        class="btn btn-primary">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="row" ng-repeat="item in comments">
+        <div class="col-md-offset-5 col-md-4">
+            <p ng-bind="item.comment"></p>
+        </div>
+    </div>
+    <div class="row" ng-hide="equals">
+        <div class="col-md-offset-8">
+            <h4>{{user.name}}</h4>
+        </div>
+    </div>
+</div>
